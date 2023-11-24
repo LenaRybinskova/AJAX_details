@@ -1,9 +1,12 @@
 const resultBlock = document.querySelector("#result")
 const pageNumberEl = document.querySelector("#page-number")
-
 const clickMeButton = document.querySelector("#click-me")
+
 clickMeButton.addEventListener("click", () => {
-    makeRequest(pageNumberEl.value, onDataReceived)
+// то что вернула функ makeRequest сохр в promise
+  const promise =  makeRequestAxios(pageNumberEl.value)
+    // когда получишь ответ, запусти onDataReceived
+    promise.then(onDataReceived)
 })
 
 const onDataReceived = (data) => {
