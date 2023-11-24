@@ -9,6 +9,11 @@
 
 function makeRequestAxios(pageNumber) {
     const myPromise =axios.get(`https://jsonplaceholder.typicode.com/photos?albumId=${pageNumber}`);
-
     return myPromise.then(data =>{return data.data})
 }
+
+function getTodos() {
+    const myPromise =axios.get(`https://jsonplaceholder.typicode.com/todos`);
+    return myPromise.then(data =>{return data.data})
+}
+
