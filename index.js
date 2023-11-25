@@ -15,9 +15,13 @@ getTodosButton.addEventListener("click", () => {
     promise.then(onTodosReceived)
 })
 
+/*createPost(111, "learn JS", "bar", 111).then((data) => {
+    console.log(data)
+})*/
+
 
 // показ картинок
-const onDataReceived = (data) => {
+function onDataReceived(data) {
     data.forEach(el => {
         const img = document.createElement("img")
         img.src = el.thumbnailUrl;
@@ -25,13 +29,14 @@ const onDataReceived = (data) => {
     })
 }
 
-// заголовки ТД
-const onTodosReceived = (todos) => {
+// показ заголовки ТД
+function onTodosReceived(todos) {
     todos.forEach(todo => {
         const li = document.createElement("li")
         li.innerHTML = todo.title
         document.querySelector("#task-result").append(li)
     })
 }
+
 
 

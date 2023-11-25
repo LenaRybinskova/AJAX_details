@@ -17,3 +17,15 @@ function getTodos() {
     return myPromise.then(data =>{return data.data})
 }
 
+function createPost(id,title, body, userId) {
+    console.log("createPost зашла")
+    const myPromise =axios.post(`https://jsonplaceholder.typicode.com/posts`,{
+        id: userId,
+        title: title,
+        body: body,
+        userId: userId
+    });
+/*    return myPromise.then(data =>{return data.data})*/
+}
+
+console.log(createPost(111, "LenaLenaLenaLenaLena", "Lena", 11))
